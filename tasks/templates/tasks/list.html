@@ -1,0 +1,49 @@
+<link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+<style>
+    input {
+        border: 1px solid black;
+        height: 40px;
+    }
+</style>
+
+
+
+<div class="m-auto flex flex-col w-1/2">
+    
+<span>Hello {{request.user}} </span>
+<span><a href="{%url 'login' %}">Logout</a></span
+    >
+    <h1 class="text-4xl mt-2 mb-2">To do application</h1>
+    <form method="POST" action="/">
+        {% csrf_token %}
+        {{form.title}}
+        <input class="bg-indigo-500 p-2 m-2 text-white rounded-md hover:bg-indigo-600" type="submit" name="Create Task">
+    </form>
+    
+    <button type="submit">
+
+    </button>
+        {% for task in tasks %}
+        <div class="flex flex-row mt-4 mb-4">            
+            <div class="w-1/3">
+                {% if task.status == TRUE %}
+                <str>
+                    {{task}}
+                </str>
+                {% else %}
+                <p>
+                    {{task}}
+                </p>
+                {% endif %}
+            </div>
+           
+
+            <div>
+                <a class="bg-indigo-500 p-2 m-2 text-white rounded-md hover:bg-indigo-600" href="{% url 'update_task' task.id %}">Update</a>
+                <a class="bg-red-500 p-2 m-2 text-white rounded-md hover:bg-red-600" href="{% url 'delete_task' task.id %}">Delete</a>    
+            </div>
+        </div>
+        
+        {% endfor %}
+</div>
+        

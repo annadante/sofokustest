@@ -1,0 +1,21 @@
+<link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+<style>
+    input {
+        border: 1px solid black;
+        height: 40px;
+    }
+</style>
+
+
+
+<div class="m-auto flex flex-col w-1/2">
+    <h3 class="mt-4 mb-4">
+        Update Task
+    </h3>
+    <form  class="flex flex-col" method="POST" action="">
+        {% csrf_token %}
+    
+        {{form}}
+        <input class="bg-indigo-500 p-2 m-2 text-white rounded-md hover:bg-indigo-600" type="submit" name="Update Task">
+    </form>
+</div>
