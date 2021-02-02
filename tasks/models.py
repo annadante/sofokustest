@@ -1,9 +1,9 @@
 from django.db import models
-
+from django.contrib.auth.models import User
 
 class Task(models.Model):
-    id = models.AutoField(primary_key=True)
-    reporter = models.ForeignKey(User, on_delete=models.CASCADE)
+    id = models.AutoField(auto_created=True, primary_key=True)
+    user = models.ForeignKey(User, null=True, on_delete=models.SET_NULL)
     title = models.CharField(max_length=200)
     order = models.IntegerField()
     status = models.BooleanField(default=False)
