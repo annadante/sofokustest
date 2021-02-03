@@ -12,10 +12,10 @@
     <h3 class="mt-4 mb-4">
         Update Task
     </h3>
-    <form  class="flex flex-col" method="POST" action="">
+    <form  class="flex flex-row p-2 m-2 content-evenly items-center space-x-4 " method="POST" action="">
         {% csrf_token %}
     
         {{form}}
-        <input class="bg-indigo-500 p-2 m-2 text-white rounded-md hover:bg-indigo-600" type="submit" name="Update Task">
+        <input class="bg-indigo-500 w-20 p-2 text-white rounded-md hover:bg-indigo-600" type="submit" name="Update Task">
     </form>
 </div>

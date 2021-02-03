@@ -9,11 +9,11 @@
 
 
 <div class="m-auto flex flex-col w-1/2">
-    
-<span>Hello {{request.user}} </span>
-<span><a href="{%url 'login' %}">Logout</a></span>
+    <div class="p-5 bg-gray-300 flex justify-between">
+        <p>Hello {{request.user}} </p>
+        <p class="underline"><a href="{%url 'login' %}">Logout</a></p>
+    </div>
 
-    
     <h1 class="text-4xl mt-2 mb-2">To do application</h1>
     <form method="POST" action="/list/">
         {% csrf_token %}
